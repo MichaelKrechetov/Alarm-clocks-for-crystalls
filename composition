@@ -1,0 +1,29 @@
+from dataclasses import dataclass, field
+
+@dataclass
+class Growth:
+    id: int
+    save_path: str
+    diameter: int
+    high: float
+    micro: float = input("Input a micro value: ")
+    comment: str = ''
+    phase: str = 'Turned off'
+
+    def some_f_2(self):
+        pass
+
+@dataclass
+class Oven:
+    name: int
+    growth: Growth
+    chart_path: str
+    state: dict = field(default_factory={"temp": 0, "v_temp": 0, "v_rotate": 0, "v_pull": 0})
+
+    def some_function(self):
+        pass
+
+
+growth = Growth(1, "smjw;ptj", 80, 10, 27.43)
+oven1 = Oven(5, growth, "fdgjjy")
+print(oven1.growth.diameter)
